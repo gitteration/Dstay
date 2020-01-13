@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Dstay Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Dstay Server at localhost" name="Dstay Server at localhost" runtime-id="Dstay Server" serveModulesWithoutPublish="true" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="2">
+    <list key="modules" value0="dstayproject::org.eclipse.jst.jee.server:dstayproject::jst.web::2.5"/>
+  </server>
+</servers>

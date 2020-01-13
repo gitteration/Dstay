@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Nov 27 17:13:05 KST 2019
+javax.mail-api-1.6.2-sources.jar>Spring\ Plugins=
+javax.mail-api-1.6.2.pom>Spring\ Plugins=
+javax.mail-api-1.6.2.jar>Spring\ Plugins=

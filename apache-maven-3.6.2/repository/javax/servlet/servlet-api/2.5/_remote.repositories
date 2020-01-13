@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Dec 28 19:03:44 KST 2019
+servlet-api-2.5-sources.jar>Spring\ Plugins=
+servlet-api-2.5.jar>central=
+servlet-api-2.5.pom>central=
+servlet-api-2.5.pom>Spring\ Plugins=
+servlet-api-2.5.jar>Spring\ Plugins=

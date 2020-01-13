@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+C:\dstay_workspace1\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1071529432.index
+405142201.index
+2809778459.index
+422958832.index
+1850931197.index
+1383350684.index
+422958832.index
+1705680547.index

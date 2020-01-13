@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Dec 18 19:40:49 KST 2019
+logback-classic-1.1.1.jar>Spring\ Plugins=
+logback-classic-1.1.1.pom>Spring\ Plugins=
+logback-classic-1.1.1-sources.jar>Spring\ Plugins=

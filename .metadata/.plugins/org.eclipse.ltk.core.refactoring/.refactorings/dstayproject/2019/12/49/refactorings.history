@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;dstayproject/src/main/java/com/kh/dstay/lee/products/model/vo/bookMark.java&apos; to &apos;BookMark.java&apos;" description="Rename resource &apos;bookMark.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/kh/dstay/lee/products/model/vo/bookMark.java" name="BookMark.java" stamp="1575180016439" updateReferences="true"/>
+</session>

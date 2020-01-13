@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="productMapper">
+		<!-- 상품 메퍼  -->
+		<resultMap id="productResultSet" type="Product">
+		
+		<id property="pno" column="pno"/>
+		<result property="pcno" column="pcno"/>
+		<result property="pname" column="pname"/>
+		<result property="price" column="price"/>
+		<result property="pcontents" column="pcontents"/>
+		<result property="penrolldate" column="penrolldate"/>
+		<result property="pingredient" column="pingredient"/>
+		<result property="calorie" column="calorie"/>
+		<result property="pstatus" column="pstatus"/>
+		<result property="pipath" column="pipath"/>
+		<result property="pcname" column="pcname"/>
+		<result property="paverage" column="paverage"/>
+		<result property="pnotice" column="pnotice"/>
+		<result property="pi1" column="pi1"/>
+		<result property="pi2" column="pi2"/>
+		<result property="pi3" column="pi3"/>
+		<resupt property="precipe" column="precipe"/>
+		
+		
+		<!-- 카테고리 메퍼 -->
+		</resultMap>
+		
+		<resultMap id="productCateResultSet" type="ProductCategory">
+		
+		<id property="no" column="pcno"/>
+		<result property="name" column="pcname"/>
+		<result property="original_fileName" column="original_filename"/>
+		<result property="pcSum" column="pcsum"/>
+		
+		</resultMap>
+		
+		<!-- 해당 카테고리의 상품 총 갯수 -->
+		<select id="getCateListCount" resultType="_int">
+			select count(*)
+			from product
+			where pcno = #{caNo}
+		
+		</select>
+		
+		<!-- 카테고리의 상세정보와 카테고리에 해당하는 각 상품들의 총 갯수  -->
+		<select id="cateSelect" resultMap="productCateResultSet">
+		
+			select pc.*, (select count(*) from product where pc.pcno=pcno)pcsum
+			from product_category pc
+		
+		</select>
+		
+		<!-- 카테고리 안의 상품목록들의 정보와 이미지경로 -->
+		<select id="selectCategory" resultMap="productResultSet">
+		
+			select p.*, pi.pipath as pi1 
+			from product p, product_image pi
+			where (pi.piorderby=1 and p.pcno = #{caNo})and p.pno = pi.pno
+			
+		</select>
+		
+		<select id="selectProduct" resultMap="productResultSet">
+
+			
+			select p.*, 
+			       pcname,
+			       (select pipath
+			       from product_image
+			       where pno = #{pdNo} and piorderby = 1 )pi1,
+			       (select pipath
+			       from product_image
+			       where pno = #{pdNo} and piorderby = 2 )pi2,
+			       (select pipath
+			       from product_image
+			       where pno = #{pdNo} and piorderby = 3 )pi3,
+			       (select  LISTAGG(ic.icname, ',') within group(order by ic.icname) as icname
+                    from ingredient i, ingredient_category ic
+                    where (i.icno = ic.icno) and pno = #{pdNo}
+                    group by pno)pingredient
+			from product p, product_category pc
+			where (p.pcno = pc.pcno) and p.pno = #{pdNo}
+		</select>
+		
+		
+		
+</mapper>
